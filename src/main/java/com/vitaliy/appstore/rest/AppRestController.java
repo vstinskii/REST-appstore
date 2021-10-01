@@ -43,4 +43,10 @@ public class AppRestController {
 
         return applicationId;
     }
+
+    @GetMapping("/appCompare/{applicationsIds}")
+    public Application compareApplications(@PathVariable int[] applicationsIds) {
+
+        return applicationService.applicationsCompare(applicationsIds);
+    }
 }
