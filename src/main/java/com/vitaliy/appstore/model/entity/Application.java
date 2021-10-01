@@ -1,6 +1,9 @@
 package com.vitaliy.appstore.model.entity;
 
+import com.vitaliy.appstore.model.validation.OneOf;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "application")
@@ -12,11 +15,13 @@ public class Application implements Comparable<Application> {
     private int id;
 
     @Column(name = "app_name")
+    @Size(min = 4, max = 128, message = "Application name must be in the range 4 to 128")
     private String name;
 
     @Column(name = "version")
     private String version;
 
+    @OneOf({3,7,12,16,18})
     @Column(name = "content_rate")
     private int contentRate;
 
