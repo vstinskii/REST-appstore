@@ -11,4 +11,6 @@ public interface ApplicationService {
     Application getApplicationById(int id);
 
     List<Application> getAllApplication();
+
+    void deleteApplicationById(int id);
 }

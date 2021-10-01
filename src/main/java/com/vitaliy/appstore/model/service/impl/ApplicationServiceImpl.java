@@ -44,4 +44,9 @@ public class ApplicationServiceImpl implements ApplicationService {
         return applicationRepository.findAll();
     }
 
+    @Override
+    public void deleteApplicationById(int id) {
+        applicationRepository.deleteById(id);
+    }
+
 }
