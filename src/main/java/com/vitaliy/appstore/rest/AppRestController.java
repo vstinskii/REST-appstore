@@ -3,7 +3,6 @@ package com.vitaliy.appstore.rest;
 import com.vitaliy.appstore.model.entity.Application;
 import com.vitaliy.appstore.model.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
