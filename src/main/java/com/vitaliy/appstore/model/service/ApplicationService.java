@@ -15,4 +15,6 @@ public interface ApplicationService {
     void deleteApplicationById(int id);
 
     Application applicationsCompare(int[] ids);
+
+    int getCountOfApplicationByContentRate(int contentRate);
 }

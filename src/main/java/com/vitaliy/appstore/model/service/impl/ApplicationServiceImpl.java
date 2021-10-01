@@ -70,4 +70,16 @@ public class ApplicationServiceImpl implements ApplicationService {
         return applications.get(applications.size()-1);
     }
 
+    @Override
+    public int getCountOfApplicationByContentRate(int contentRate) {
+
+        if (contentRate == 3 | contentRate == 7 | contentRate == 12 | contentRate == 16 | contentRate == 18 ) {
+
+            return applicationRepository.getCountOfApplicationByContentRate(contentRate);
+
+        }
+
+        throw new BadParametersException("Content rate must be one of the following : 3, 7, 12, 16, 18");
+    }
+
 }
