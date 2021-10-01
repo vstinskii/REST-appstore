@@ -5,4 +5,6 @@ import com.vitaliy.appstore.model.entity.Application;
 public interface ApplicationService {
 
     void saveApplication(Application application);
+
+    Application getApplicationById(int id);
 }
