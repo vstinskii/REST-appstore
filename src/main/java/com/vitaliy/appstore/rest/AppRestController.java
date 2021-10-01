@@ -49,4 +49,10 @@ public class AppRestController {
 
         return applicationService.applicationsCompare(applicationsIds);
     }
+
+    @GetMapping("/applications/countByContentRate/{contentRate}")
+    public int getCountOfApplicationsByContentRate(@PathVariable int contentRate) {
+
+        return applicationService.getCountOfApplicationByContentRate(contentRate);
+    }
 }
