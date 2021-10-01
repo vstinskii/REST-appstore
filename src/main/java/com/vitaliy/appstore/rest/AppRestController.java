@@ -5,6 +5,8 @@ import com.vitaliy.appstore.model.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class AppRestController {
@@ -26,5 +28,11 @@ public class AppRestController {
     public Application getApplicationById(@PathVariable int applicationId) {
 
         return applicationService.getApplicationById(applicationId);
+    }
+
+    @GetMapping("/applications")
+    public List<Application> getAllApplications() {
+
+        return applicationService.getAllApplication();
     }
 }
