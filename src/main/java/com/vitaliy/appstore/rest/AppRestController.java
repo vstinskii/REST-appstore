@@ -35,4 +35,12 @@ public class AppRestController {
 
         return applicationService.getAllApplication();
     }
+
+    @DeleteMapping("/applications/{applicationId}")
+    public int deleteApplicationById(@PathVariable int applicationId) {
+
+        applicationService.deleteApplicationById(applicationId);
+
+        return applicationId;
+    }
 }
