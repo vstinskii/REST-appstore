@@ -20,5 +20,15 @@ public class RestExceptionHandler {
         return new ResponseEntity<>(stackTrace, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler
+    public ResponseEntity<ApplicationStackTrace> handleBadRequestException(Exception e) {
 
+        ApplicationStackTrace stackTrace = new ApplicationStackTrace();
+
+        stackTrace.setStatus(HttpStatus.BAD_REQUEST.value());
+        stackTrace.setMessage(e.getMessage());
+        stackTrace.setTimeStamp(System.currentTimeMillis());
+
+        return new ResponseEntity<>(stackTrace, HttpStatus.BAD_REQUEST);
+    }
 }
