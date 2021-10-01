@@ -32,6 +32,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     public Application getApplicationById(int id) {
         Optional<Application> result = applicationRepository.findById(id);
 
+        //checking for null
         Application application = null;
         if(result.isPresent()) {
             application = result.get();
@@ -73,6 +74,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public int getCountOfApplicationByContentRate(int contentRate) {
 
+        //checking the content rate of certain numbers
         if (contentRate == 3 | contentRate == 7 | contentRate == 12 | contentRate == 16 | contentRate == 18 ) {
 
             return applicationRepository.getCountOfApplicationByContentRate(contentRate);
