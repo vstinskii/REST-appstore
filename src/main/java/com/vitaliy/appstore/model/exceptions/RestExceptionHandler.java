@@ -31,4 +31,16 @@ public class RestExceptionHandler {
 
         return new ResponseEntity<>(stackTrace, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler
+    public ResponseEntity<ApplicationStackTrace> handleBadParametersException(BadParametersException e) {
+
+        ApplicationStackTrace stackTrace = new ApplicationStackTrace();
+
+        stackTrace.setStatus(HttpStatus.BAD_REQUEST.value());
+        stackTrace.setMessage(e.getMessage());
+        stackTrace.setTimeStamp(System.currentTimeMillis());
+
+        return new ResponseEntity<>(stackTrace, HttpStatus.BAD_REQUEST);
+    }
 }
