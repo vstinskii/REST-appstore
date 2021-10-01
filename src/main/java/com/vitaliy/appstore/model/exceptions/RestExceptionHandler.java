@@ -26,12 +26,12 @@ public class RestExceptionHandler {
     }
 
     @ExceptionHandler
-    public ResponseEntity<ApplicationStackTrace> handleBadRequestException(Exception e) {
+    public ResponseEntity<ApplicationStackTrace> handleBadRequestException(NumberFormatException e) {
 
         ApplicationStackTrace stackTrace = new ApplicationStackTrace();
 
         stackTrace.setStatus(HttpStatus.BAD_REQUEST.value());
-        stackTrace.setMessage(e.getMessage());
+        stackTrace.setMessage("This request can only contain numbers");
         stackTrace.setTimeStamp(System.currentTimeMillis());
 
         return new ResponseEntity<>(stackTrace, HttpStatus.BAD_REQUEST);
