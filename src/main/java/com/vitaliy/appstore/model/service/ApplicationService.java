@@ -13,4 +13,6 @@ public interface ApplicationService {
     List<Application> getAllApplication();
 
     void deleteApplicationById(int id);
+
+    Application applicationsCompare(int[] ids);
 }
