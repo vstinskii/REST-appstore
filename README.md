@@ -12,7 +12,7 @@ Appstore has the following endpoinds:
 To save application you need to send POST request with JSON message: 
   name (String, must be in the range 4 to 128), 
   version (String)
-  content rate (int, must be one of the following : 3, 7, 12, 16, 18)
+  contentRate (int, must be one of the following : 3, 7, 12, 16, 18)
 Example:
 {
     "name" : "testApp",
