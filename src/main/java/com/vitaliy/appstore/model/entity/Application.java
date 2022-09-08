@@ -1,5 +1,6 @@
 package com.vitaliy.appstore.model.entity;
 
+import com.vitaliy.appstore.model.comparator.VersionLevelComparator;
 import com.vitaliy.appstore.model.validation.OneOf;
 
 import javax.persistence.*;
@@ -68,6 +69,6 @@ public class Application implements Comparable<Application> {
 
     @Override
     public int compareTo(Application o) {
-        return version.compareTo(o.version);
+        return new VersionLevelComparator(o.version.toCharArray(), version.toCharArray()).compareVersion();
     }
 }
